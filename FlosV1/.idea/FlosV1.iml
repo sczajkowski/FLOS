@@ -1,7 +1,124 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager">
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/flos/app" isTestSource="false" packagePrefix="App\" />
+      <sourceFolder url="file://$MODULE_DIR$/flos/database/factories" isTestSource="false" packagePrefix="Database\Factories\" />
+      <sourceFolder url="file://$MODULE_DIR$/flos/database/seeders" isTestSource="false" packagePrefix="Database\Seeders\" />
+      <sourceFolder url="file://$MODULE_DIR$/flos/tests" isTestSource="true" packagePrefix="Tests\" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/facade/flare-client-php" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/facade/ignition" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/nette/schema" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/nette/utils" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/nikic/php-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/brick/math" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/voku/portable-ascii" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/opis/closure" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/asm89/stack-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/filp/whoops" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/simple-cache" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/log" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psy/psysh" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/http-factory" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/http-message" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/http-client" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/psr/container" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/composer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-intl-grapheme" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-mbstring" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/theseer/tokenizer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/error-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/http-foundation" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/console" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/process" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/routing" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/deprecation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/http-client-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/service-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/http-kernel" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/finder" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/string" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/mime" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-intl-normalizer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/event-dispatcher-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/css-selector" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/var-dumper" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/event-dispatcher" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-intl-idn" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-ctype" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/translation-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/translation" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-iconv" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/php-file-iterator" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-php80" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/symfony/polyfill-php73" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpdocumentor/type-resolver" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpdocumentor/reflection-common" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/graham-campbell/result-type" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpdocumentor/reflection-docblock" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/swiftmailer/swiftmailer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/nunomaduro/collision" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/dragonmantank/cron-expression" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/tijsverkoyen/css-to-inline-styles" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/guzzlehttp/guzzle" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/resource-operations" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/guzzlehttp/psr7" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/guzzlehttp/promises" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/code-unit" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/cli-parser" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/exporter" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/environment" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/lines-of-code" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/recursion-context" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/version" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/type" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/complexity" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/object-reflector" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/diff" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/code-unit-reverse-lookup" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/comparator" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/ralouphie/getallheaders" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/object-enumerator" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/sebastian/global-state" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/fideloper/proxy" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/hamcrest/hamcrest-php" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpoption/phpoption" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/fruitcake/laravel-cors" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/doctrine/inflector" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/doctrine/lexer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/fakerphp/faker" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/doctrine/instantiator" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/php-invoker" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/phpunit" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/php-timer" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/php-code-coverage" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpunit/php-text-template" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phar-io/manifest" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/myclabs/deep-copy" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phpspec/prophecy" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/phar-io/version" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/laravel/sail" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/monolog/monolog" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/mockery/mockery" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/dflydev/dot-access-data" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/vlucas/phpdotenv" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/laravel/tinker" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/egulias/email-validator" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/nesbot/carbon" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/league/commonmark" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/ramsey/uuid" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/ramsey/collection" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/league/mime-type-detection" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/facade/ignition-contracts" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/league/flysystem" />
+      <excludeFolder url="file://$MODULE_DIR$/flos/vendor/league/config" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
