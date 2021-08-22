@@ -44,7 +44,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Panel Produktów</h1>
+                        <h1 class="m-0">Sala</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
@@ -65,7 +65,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">Pizza</h3>
+                                <h3 class="text-center">C1</h3>
                             </div>
                         </div>
                     </div>
@@ -74,7 +74,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">Pierogi</h3>
+                                <h3 class="text-center">B5</h3>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">Dodatki</h3>
+                                <h3 class="text-center">E2</h3>
                             </div>
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">Napoje</h3>
+                                <h3 class="text-center">++ls</h3>
                             </div>
                         </div>
                     </div>
