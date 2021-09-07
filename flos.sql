@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 09 Sie 2021, 19:47
+-- Czas generowania: 07 Wrz 2021, 16:16
 -- Wersja serwera: 10.4.17-MariaDB
 -- Wersja PHP: 8.0.2
 
@@ -45,6 +45,15 @@ CREATE TABLE `item` (
   `name` varchar(255) DEFAULT NULL,
   `price` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `item`
+--
+
+INSERT INTO `item` (`id`, `name`, `price`) VALUES
+(1, 'kaczjatore', 22),
+(2, 'kebap', 15),
+(3, 'mergarita', 17);
 
 -- --------------------------------------------------------
 
@@ -89,7 +98,7 @@ CREATE TABLE `orders` (
   `items_id` int(11) DEFAULT NULL,
   `price` int(11) DEFAULT NULL,
   `waiter` int(11) DEFAULT NULL,
-  `table` int(11) DEFAULT NULL,
+  `tabl` int(11) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -102,7 +111,8 @@ CREATE TABLE `orders` (
 CREATE TABLE `order_items` (
   `order_id` int(11) DEFAULT NULL,
   `item_id` int(11) DEFAULT NULL,
-  `quantity` int(11) DEFAULT NULL
+  `quantity` int(11) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -220,7 +230,7 @@ ALTER TABLE `ingridients`
 -- AUTO_INCREMENT dla tabeli `item`
 --
 ALTER TABLE `item`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `migrations`
