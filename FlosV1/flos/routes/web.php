@@ -13,10 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+//Panel Administratora(Kierownika)
+Route::get('/admin', function() {
+    return view('admin.admin');
+});
+
+
+Route::get('/', function() {
     return view('welcome');
 });
 
-Route::get('/user', function () {
+Route::get('/user', function() {
     return view('user');
+});
+
+Route::get('/user/order/id', function() {
+    return view('order');
+});
+Route::get('/order/id/category/product', function (){
+    return view('product');
 });
