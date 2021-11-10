@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,10 @@ Route::get('/', function() {
     return view('welcome');
 });
 
+//Route::get('/', [UserController::class, 'login']);
+
+Route::post('/',[UserController::class, 'login']);
+
 Route::get('/user', function() {
     return view('user');
 });
@@ -33,3 +38,4 @@ Route::get('/user/order/id', function() {
 Route::get('/order/id/category/product', function (){
     return view('product');
 });
+
