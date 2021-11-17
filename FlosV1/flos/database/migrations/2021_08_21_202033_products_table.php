@@ -13,10 +13,11 @@ class ProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('productName');
             $table->string('price');
+            $table->string('category');
             $table->timestamps();
         });
     }

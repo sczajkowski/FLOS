@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Admin\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +16,16 @@ use App\Http\Controllers\UserController;
 */
 
 //Panel Administratora(Kierownika)
+
 Route::get('/admin', function() {
     return view('admin.admin');
 });
+
+Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products');
+//Route::get('/admin/products', function() {return view('admin.products');});
+
+Route::post('/admin/products', [ProductController::class, 'store']);
+
 
 
 Route::get('/', function() {
