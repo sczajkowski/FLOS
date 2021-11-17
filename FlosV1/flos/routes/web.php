@@ -22,9 +22,12 @@ Route::get('/admin', function() {
 });
 
 Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products');
-//Route::get('/admin/products', function() {return view('admin.products');});
 
 Route::post('/admin/products', [ProductController::class, 'store']);
+
+Route::get('/admin/products/categories', );
+
+
 
 
 

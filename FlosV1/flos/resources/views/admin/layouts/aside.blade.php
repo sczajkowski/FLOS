@@ -34,7 +34,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="admin/products/category" class="nav-link">
+                    <a href="admin/products/categories" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Kategorie Produktów
