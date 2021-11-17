@@ -175,12 +175,12 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0">Produkty</h1>
+                        <h1 class="m-0">Kategorie Produktów</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Dodaj Produkt
+                                Dodaj Kategorie
                             </button>
                             <!-- MODAL -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -232,7 +232,7 @@
 
                         <div class="card">
                             <div class="card-header border-0">
-                                <h3 class="card-title">Makarony</h3>
+                                <h3 class="card-title">Kategorie</h3>
                                 <div class="card-tools">
                                     <a href="#" class="btn btn-tool btn-sm">
                                         <i class="fas fa-download"></i>
@@ -246,112 +246,19 @@
                                 <table class="table table-striped table-valign-middle">
                                     <thead>
                                     <tr>
-                                        <th>Produkt</th>
-                                        <th>Cena</th>
-                                        <th>Sprzedaż</th>
-                                        <th>Więcej</th>
+                                        <th>Kategoria</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($products as $product)
+
                                     <tr>
                                         <td>
-                                            {{$product->productName}}
-                                        </td>
-                                        <td>{{$product->price}}</td>
-                                        <td>
-                                            <small class="text-success mr-1">
-                                                <i class="fas fa-arrow-up"></i>
-                                                12%
-                                            </small>
-                                            40 Sprzedanych {{$product->category}}
-                                        </td>
-                                        <td>
-                                            <a href="#" class="text-muted">
-                                                <i class="fas fa-search"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <div class="card-header border-0">
-                                <h3 class="card-title">Pizza</h3>
-                                <div class="card-tools">
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-striped table-valign-middle">
-                                    <thead>
-                                    <tr>
-                                        <th>Produkt</th>
-                                        <th>Cena</th>
-                                        <th>Sprzedaż</th>
-                                        <th>Więcej</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            Hawajska
-                                        </td>
-                                        <td>13 ZŁ</td>
-                                        <td>
-                                            <small class="text-success mr-1">
-                                                <i class="fas fa-arrow-up"></i>
-                                                12%
-                                            </small>
-                                            40 Sprzedanych
-                                        </td>
-                                        <td>
-                                            <a href="#" class="text-muted">
-                                                <i class="fas fa-search"></i>
-                                            </a>
+                                            Makarony
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
-                                            Hawajska
-                                        </td>
-                                        <td>13 ZŁ</td>
-                                        <td>
-                                            <small class="text-success mr-1">
-                                                <i class="fas fa-arrow-up"></i>
-                                                12%
-                                            </small>
-                                            40 Sprzedanych
-                                        </td>
-                                        <td>
-                                            <a href="#" class="text-muted">
-                                                <i class="fas fa-search"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Hawajska
-                                        </td>
-                                        <td>13 ZŁ</td>
-                                        <td>
-                                            <small class="text-success mr-1">
-                                                <i class="fas fa-arrow-up"></i>
-                                                12%
-                                            </small>
-                                            40 Sprzedanych
-                                        </td>
-                                        <td>
-                                            <a href="#" class="text-muted">
-                                                <i class="fas fa-search"></i>
-                                            </a>
+                                            Pizza
                                         </td>
                                     </tr>
                                     </tbody>

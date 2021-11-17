@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,7 +26,7 @@ Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.
 
 Route::post('/admin/products', [ProductController::class, 'store']);
 
-Route::get('/admin/products/categories', );
+Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 
 
