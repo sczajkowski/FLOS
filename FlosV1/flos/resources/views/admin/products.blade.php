@@ -195,7 +195,12 @@
                                                @csrf
                                                 <div class="input-group input-group-sm mb-3">
                                                     <span class="input-group-text" id="inputGroup-sizing-sm">Kategoria</span>
-                                                    <input type="text" name="category" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                    <select class="form-select" id="inputGroupSelect01">
+                                                        <option selected>Wybierz...</option>
+                                                        @foreach($categories as $category)
+                                                        <option value="{{$category->name}}">{{$category->name}}</option>
+                                                        @endforeach
+                                                    </select>
                                                     <button type="button" class="btn btn-success">Tick</button>
                                                 </div>
                                                 <div class="input-group input-group-sm mb-3">
