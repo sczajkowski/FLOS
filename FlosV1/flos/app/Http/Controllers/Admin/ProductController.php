@@ -9,16 +9,21 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-
-
     function store(Request $request){
 
-        $data = $request->all();
-        $category = $request->input('category');
-        $productName = $request->input('productName');
-        $price = $request->input('price');
+        //$data = $request->all();
 
-        $data = Product::create($data);
+        if (isset($_POST['productName'])){
+            $data = $request->all();
+            Product::create($data);
+        }
+        elseif (isset($_POST['name'])){
+            $data = $request->all();
+            Category::create($data);
+        }
+        else{
+            return "Error 500 Abort";
+        }
 
         return redirect('admin/products');
     }

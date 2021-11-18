@@ -195,7 +195,7 @@
                                                @csrf
                                                 <div class="input-group input-group-sm mb-3">
                                                     <span class="input-group-text" id="inputGroup-sizing-sm">Kategoria</span>
-                                                    <select class="form-select" id="inputGroupSelect01">
+                                                    <select class="form-select" name="category" id="inputGroupSelect01">
                                                         <option selected>Wybierz...</option>
                                                         @foreach($categories as $category)
                                                         <option value="{{$category->name}}">{{$category->name}}</option>
@@ -347,7 +347,7 @@
                                             @csrf
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Kategoria</span>
-                                                <input type="text" name="categoryName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                                 <button type="button" class="btn btn-success">Tick</button>
                                             </div>
                                             <div class="modal-footer">
