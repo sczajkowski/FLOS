@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/',[LoginController::class, 'index']);
 
-Route::post('/', LoginController::class, 'login');
+Route::post('/', [LoginController::class, 'login']);
 
 //Admin View
 
@@ -41,12 +41,6 @@ Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 
 //User View
-
-
-
-//Route::get('/', [UserController::class, 'login']);
-
-Route::post('/',[UserController::class, 'login']);
 
 Route::get('/user', function() {
     return view('user');

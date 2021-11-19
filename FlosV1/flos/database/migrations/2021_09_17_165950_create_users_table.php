@@ -17,6 +17,8 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('pin');
             $table->string('accountType');
+            $table->string('name');
+            $table->string('surname');
             $table->timestamps();
         });
     }

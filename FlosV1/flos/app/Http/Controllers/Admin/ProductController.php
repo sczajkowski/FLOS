@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    function store(Request $request){
+    //Dodawanie Produktu lub Kategorii do Bazy
 
-        //$data = $request->all();
+    function store(Request $request){
 
         if (isset($_POST['productName'])){
             $data = $request->all();
@@ -28,11 +28,15 @@ class ProductController extends Controller
         return redirect('admin/products');
     }
 
+    //Wyświetlanie PRoduct View wraz ze zmiennymi
+
     public function index(){
         $products = Product::all();
         $categories = Category::all();
         return view('admin.products', compact('products','categories'));
     }
+
+    //Usuwanie Produktu
 
     public function destroy($id){
         $product = Product::findOrFail($id);

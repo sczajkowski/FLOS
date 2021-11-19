@@ -30,7 +30,7 @@
                 <form method="post">
                     @csrf
                     <div class="mb-3">
-                        <input class="form-control">
+                        <input class="form-control" name="pin">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -49,12 +49,6 @@
                         <button type="button" class="btn btn-light col-auto">8</button>
                         <button type="button" class="btn btn-light col-auto">9</button>
                     </div>
-
-
-
-
-
-
             </div>
 
         </div>
