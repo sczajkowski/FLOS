@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,13 @@ use App\Http\Controllers\Admin\CategoryController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+//Login View
+
+Route::get('/',[LoginController::class, 'index']);
+
+Route::post('/', LoginController::class, 'login');
 
 //Admin View
 
@@ -34,9 +42,7 @@ Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 //User View
 
-Route::get('/', function() {
-    return view('welcome');
-});
+
 
 //Route::get('/', [UserController::class, 'login']);
 
