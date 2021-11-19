@@ -28,10 +28,15 @@ class ProductController extends Controller
         return redirect('admin/products');
     }
 
-    public function index()
-    {
+    public function index(){
         $products = Product::all();
         $categories = Category::all();
         return view('admin.products', compact('products','categories'));
+    }
+
+    public function destroy($id){
+        $product = Product::findOrFail($id);
+        $product->delete();
+        return redirect('/admin/products');
     }
 }

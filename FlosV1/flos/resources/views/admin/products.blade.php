@@ -256,6 +256,7 @@
                                         <th>Cena</th>
                                         <th>Sprzedaż</th>
                                         <th>Więcej</th>
+                                        <th>Usuń</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -278,6 +279,14 @@
                                                 <a href="#" class="text-muted">
                                                     <i class="fas fa-search"></i>
                                                 </a>
+                                            </td>
+                                            <td>
+                                                <!-- Deleting Product -->
+                                                <form action="{{ url('/admin/products', ['id' => $product->id]) }}" method="post">
+                                                    <input class="btn btn-default" type="submit" value="Delete" />
+                                                    @method('delete')
+                                                    @csrf
+                                                </form>
                                             </td>
                                         </tr>
                                         @endif

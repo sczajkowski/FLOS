@@ -16,7 +16,7 @@ use App\Http\Controllers\Admin\CategoryController;
 |
 */
 
-//Panel Administratora(Kierownika)
+//Admin View
 
 Route::get('/admin', function() {
     return view('admin.admin');
@@ -26,11 +26,13 @@ Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.
 
 Route::post('/admin/products', [ProductController::class, 'store']);
 
+Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.delete');
+
 Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 
 
-
+//User View
 
 Route::get('/', function() {
     return view('welcome');
