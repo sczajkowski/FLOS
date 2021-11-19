@@ -234,55 +234,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-
-                        <div class="card">
-                            <div class="card-header border-0">
-                                <h3 class="card-title">Makarony</h3>
-                                <div class="card-tools">
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-download"></i>
-                                    </a>
-                                    <a href="#" class="btn btn-tool btn-sm">
-                                        <i class="fas fa-bars"></i>
-                                    </a>
-                                </div>
-                            </div>
-                            <div class="card-body table-responsive p-0">
-                                <table class="table table-striped table-valign-middle">
-                                    <thead>
-                                    <tr>
-                                        <th>Produkt</th>
-                                        <th>Cena</th>
-                                        <th>Sprzedaż</th>
-                                        <th>Więcej</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    @foreach($products as $product)
-                                    <tr>
-                                        <td>
-                                            {{$product->productName}}
-                                        </td>
-                                        <td>{{$product->price}}</td>
-                                        <td>
-                                            <small class="text-success mr-1">
-                                                <i class="fas fa-arrow-up"></i>
-                                                12%
-                                            </small>
-                                            40 Sprzedanych {{$product->category}}
-                                        </td>
-                                        <td>
-                                            <a href="#" class="text-muted">
-                                                <i class="fas fa-search"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <!--foricz kategori-->
+                        <!--Display All Categories using ForEach-->
                         @foreach($categories as $category)
                         <div class="card">
                             <div class="card-header border-0">
@@ -307,17 +259,20 @@
                                     </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($products as $product)
+                                        <!-- Display Product in assigned Category -->
+                                        @if($product->category == $category->name)
                                         <tr>
                                             <td>
-                                                Nazwa Produktu
+                                                {{$product->productName}}
                                             </td>
-                                            <td>Cena Produktu</td>
+                                            <td>{{$product->price}}</td>
                                             <td>
                                                 <small class="text-success mr-1">
                                                     <i class="fas fa-arrow-up"></i>
                                                     12%
                                                 </small>
-                                                40 Sprzedanych Kategoria
+                                                40 Sprzedanych {{$product->category}}
                                             </td>
                                             <td>
                                                 <a href="#" class="text-muted">
@@ -325,6 +280,8 @@
                                                 </a>
                                             </td>
                                         </tr>
+                                        @endif
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>
