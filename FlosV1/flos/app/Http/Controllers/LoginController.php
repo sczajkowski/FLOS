@@ -14,16 +14,13 @@ class LoginController extends Controller
     function check(Request $request){
 
         $user = User::where('pin','=',$request->pin)->first();
-        //return $request->pin;
-        return $user;
+        if($user)
+        {
+            return redirect('/user');
 
-        /*User::where('pin','=', $request->pin)->first();
-        $user = User::where('pin','=', $request->pin)->first();
-        if($user){
-            $request->session()->put('LoggedUser', $user->id);
-            return redirect('user');
         }else{
+            //user not exist
             return back()->with('fail', 'No account found for this pin');
-        }*/
+        }
     }
 }
