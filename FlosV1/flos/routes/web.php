@@ -22,7 +22,7 @@ use App\Http\Controllers\LoginController;
 
 Route::get('/',[LoginController::class, 'index']);
 
-Route::post('/', [LoginController::class, 'authenticate']);
+Route::post('/', [LoginController::class, 'check'])->name('auth.check');
 
 //Admin View
 

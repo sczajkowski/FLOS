@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -12,29 +11,19 @@ class LoginController extends Controller
         return view('welcome');
     }
 
-
-    public function authenticate(Request $request){
-        //dd($request->get('pin'));
-        $credentials = $request->validate([
-            'pin' => ['required']
-            ]);
-
-        $pin = $request->get('pin');
-
-        $var = User::with('pin', $pin);
-
-        if (Auth::attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->inrended('admin');
-        }
-
-        return back()->withErrors([
-            'pin' => 'Błędny PIN',
-                                  ]);
-    }
-
     function check(Request $request){
-        return $request->input();
+
+        $user = User::where('pin','=',$request->pin)->first();
+        //return $request->pin;
+        return $user;
+
+        /*User::where('pin','=', $request->pin)->first();
+        $user = User::where('pin','=', $request->pin)->first();
+        if($user){
+            $request->session()->put('LoggedUser', $user->id);
+            return redirect('user');
+        }else{
+            return back()->with('fail', 'No account found for this pin');
+        }*/
     }
 }
