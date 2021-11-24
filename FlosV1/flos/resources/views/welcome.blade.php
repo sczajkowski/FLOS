@@ -27,10 +27,10 @@
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
 
             <div id="container">
-                <form method="post">
+                <form method="post" name="request">
                     @csrf
                     <div class="mb-3">
-                        <input class="form-control" name="pin">
+                        <input class="form-control" name="pin" value="pin">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
