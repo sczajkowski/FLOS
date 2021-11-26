@@ -16,8 +16,17 @@ class LoginController extends Controller
         $user = User::where('pin','=',$request->pin)->first();
         if($user)
         {
-            return redirect('/user');
-
+            if ($user->accountType == 'user'){
+                $var = $user->id;
+                return redirect()->route('user', $var);
+            }
+            elseif ($user->accountType == 'admin'){
+                $var = $user->id;
+                return redirect()->route('admin', $var);
+            }
+            else{
+                return back()->with('fail', 'Something went wrong');
+            }
         }else{
             //user not exist
             return back()->with('fail', 'No account found for this pin');

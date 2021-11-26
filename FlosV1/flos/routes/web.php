@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\Admin\AdminLoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,7 @@ Route::post('/', [LoginController::class, 'check'])->name('auth.check');
 
 //Admin View
 
-Route::get('/admin', function() {
-    return view('admin.admin');
-});
+Route::get('/admin/{id}',[AdminLoginController::class, 'index'])->name('admin');
 
 Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products');
 
@@ -42,9 +41,7 @@ Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 //User View
 
-Route::get('/user', function() {
-    return view('user');
-});
+Route::get('/user/{id}',[UserController::class,'index'])->name('user');
 
 Route::get('/user/order/id', function() {
     return view('order');

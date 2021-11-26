@@ -8,14 +8,13 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-        public function create(Request $request){
-            //
+
+        public function index($id){
+            $user = User::where('id','=',$id)->first();
+            return view('user', compact('user'));
         }
 
-        public function store()
-        {
-            return view('user');
-        }
+
 
 
 }
