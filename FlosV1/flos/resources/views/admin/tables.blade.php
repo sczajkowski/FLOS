@@ -259,13 +259,11 @@
                                                 <td>
                                                     {{$table->name}}
                                                 </td>
-                                                <td>x</td>
                                                 <td>
-                                                    <small class="text-success mr-1">
-                                                        <i class="fas fa-arrow-up"></i>
-                                                        12%
-                                                    </small>
-                                                    40 Sprzedanych COS
+                                                    {{$table->customersAmount}}
+                                                </td>
+                                                <td>
+                                                    {{$table->status}}
                                                 </td>
                                                 <td>
                                                     <!-- Deleting Product -->
