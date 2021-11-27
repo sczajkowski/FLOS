@@ -21,8 +21,6 @@ class TableFactory extends Factory
      */
     public function definition()
     {
-        return [
-            //
-        ];
+        //
     }
 }

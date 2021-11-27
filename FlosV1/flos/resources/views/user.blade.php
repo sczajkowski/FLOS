@@ -63,10 +63,48 @@
                 <div class="row">
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <a href="/user/order/id">
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">+</h3>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tableModal">
+                                    Nowe zamówienie
+                                </button>
+                                <div class="modal fade" id="tableModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Formularz dodania produktu</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form method="POST">
+                                                    @csrf
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-sm">Kategoria</span>
+                                                        <select class="form-select" name="category" id="inputGroupSelect01">
+                                                            <option selected>Wybierz...</option>
+                                                        </select>
+                                                        <button type="button" class="btn btn-success">Tick</button>
+                                                    </div>
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-sm">Nazwa Produktu</span>
+                                                        <input type="text" name="productName" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                        <button type="button" class="btn btn-success">Tick</button>
+                                                    </div>
+                                                    <div class="input-group input-group-sm mb-3">
+                                                        <span class="input-group-text" id="inputGroup-sizing-sm">Cena</span>
+                                                        <input type="text" name="price" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                        <button type="button" class="btn btn-success">Tick</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                                                        <button type="submit" class="btn btn-primary">Dodaj Produkt</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         </a>
