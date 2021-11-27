@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -30,10 +31,11 @@ class ProductController extends Controller
 
     //Wyświetlanie PRoduct View wraz ze zmiennymi
 
-    public function index(){
+    public function index($id){
+        $user = User::where('id','=',$id)->first();
         $products = Product::all();
         $categories = Category::all();
-        return view('admin.products', compact('products','categories'));
+        return view('admin.products', compact('products','categories', 'user'));
     }
 
     //Usuwanie Produktu

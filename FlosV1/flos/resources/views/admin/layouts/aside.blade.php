@@ -13,7 +13,7 @@
                 <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">#AdminName</a>
+                <a href="#" class="d-block">{{$user->name}} {{$user->surname}}</a>
             </div>
         </div>
 
@@ -34,10 +34,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="admin/products" class="nav-link">
+                    <a href="{{ route('admin.products',$user->id) }}" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Produkty
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.tables',$user->id) }}" class="nav-link">
+                        <i class="nav-icon fas fa-calendar-alt"></i>
+                        <p>
+                            Sala
                         </p>
                     </a>
                 </li>

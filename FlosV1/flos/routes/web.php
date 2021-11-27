@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\TableController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,13 +28,21 @@ Route::post('/', [LoginController::class, 'check'])->name('auth.check');
 
 //Admin View
 
+//Main
 Route::get('/admin/{id}',[AdminLoginController::class, 'index'])->name('admin');
 
-Route::get('/admin/products', [ProductController::class, 'index'])->name('admin.products');
+//Products
+Route::get('/admin/{id}/products', [ProductController::class, 'index'])->name('admin.products');
 
-Route::post('/admin/products', [ProductController::class, 'store']);
+Route::post('/admin/{id}/products', [ProductController::class, 'store']);
 
 Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('admin.products.delete');
+
+//Tables
+
+Route::get('/admin/{id}/tables', [TableController::class, 'index'])->name('admin.tables');
+
+//ELSE
 
 Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
