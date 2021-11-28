@@ -50,7 +50,9 @@ Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 //User View
 
-Route::get('/user/{id}',[UserController::class,'index'])->name('user');
+Route::get('/user/{id}', [UserController::class,'index'])->name('user');
+
+Route::post('/user/{id}', [])
 
 Route::get('/user/order/id', function() {
     return view('order');
