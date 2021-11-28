@@ -26,9 +26,14 @@ class OrderController extends Controller
         $order->orderId = $orderId;
         $order->user_id = $user_id;
         $order->table = $request->table;
+        $order->orderStatus = 'open';
         $order->save();
 
-        redirect('/user/{id}/',$orderId);
+        return redirect()->route('order', [$user_id ,$orderId]);
+    }
+
+    function index($id, $orderId){
+        return $orderId;
     }
 
 
