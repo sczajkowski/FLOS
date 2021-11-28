@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\TableController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,7 +53,7 @@ Route::get('/admin/products/categories', [CategoryController::class, 'index']);
 
 Route::get('/user/{id}', [UserController::class,'index'])->name('user');
 
-Route::post('/user/{id}', [])
+Route::post('/user/{id}', [OrderController::class, 'store']);
 
 Route::get('/user/order/id', function() {
     return view('order');

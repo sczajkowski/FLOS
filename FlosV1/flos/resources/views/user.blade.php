@@ -54,7 +54,7 @@
                                             @csrf
                                             <div class="input-group input-group-sm mb-3">
                                                 <span class="input-group-text" id="inputGroup-sizing-sm">Stolik</span>
-                                                <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                <input type="text" name="table" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
                                                 <button type="button" class="btn btn-success">Tick</button>
                                             </div>
                                             <div class="modal-footer">
