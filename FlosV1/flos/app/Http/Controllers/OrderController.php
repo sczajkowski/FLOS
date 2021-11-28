@@ -22,12 +22,10 @@ class OrderController extends Controller
     function store($id ,Request $request){
         $user_id = $id;
         $orderId = $this->unique_id(9);
-
         $order = new Order();
         $order->orderId = $orderId;
         $order->user_id = $user_id;
         $order->table = $request->table;
-        $order->status = 'open';
         $order->save();
 
         redirect('/user/{id}/',$orderId);
