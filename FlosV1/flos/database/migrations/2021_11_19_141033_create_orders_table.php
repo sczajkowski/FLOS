@@ -18,11 +18,11 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('orderId');
             $table->string('table');
-            $table->string('products');
-            $table->string('status');
-            $table->string('amount');
-            $table->date('createdAt');
-            $table->date('closedAt');
+            $table->string('products')->nullable();
+            $table->string('status')->nullable();
+            $table->string('amount')->nullable();
+            $table->date('createdAt')->nullable();
+            $table->date('closedAt')->nullable();
             $table->timestamps();
         });
     }

@@ -19,12 +19,12 @@ class OrderController extends Controller
          */
     }
 
-    function store(Request $request){
-
+    function store($id ,Request $request){
+        $user_id = $id;
         $data = $request->all();
         $orderId = $this->unique_id(9);
 
-        Order::create($data, $orderId);
+        Order::create($data, $orderId, $user_id);
         redirect('/user/{id}/',$orderId);
     }
 
