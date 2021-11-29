@@ -61,16 +61,19 @@
             <div class="container-fluid">
                 <!-- Small boxes (Stat box) -->
                 <div class="row">
+                    @foreach($categories as $category)
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <a href="/order/id/category/product">
+                        <a href="">
                             <div class="small-box bg-info">
                                 <div class="inner">
-                                    <h3 class="text-center">Pizza</h3>
+                                    <h3 class="text-center">{{$category->name}}</h3>
                                 </div>
                             </div>
                         </a>
+
                     </div>
+                    @endforeach
                     <!-- ./col -->
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
