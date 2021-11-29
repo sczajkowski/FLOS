@@ -37,7 +37,11 @@ class OrderController extends Controller
     function index($id, $orderId){
         $user = User::where('id','=',$id)->first();
         $categories = Category::all();
-        return view('order', compact('user', 'categories'));
+        return view('order', compact('user', 'categories', 'orderId'));
+    }
+
+    function categoryIndex($id, $orderId, $category){
+        return $category;
     }
 
 

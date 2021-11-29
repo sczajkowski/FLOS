@@ -64,7 +64,7 @@
                     @foreach($categories as $category)
                     <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <a href="">
+                        <a href="{{route('orderCategory', [$user->id, $orderId, $category->name])}}">
                             <div class="small-box bg-info">
                                 <div class="inner">
                                     <h3 class="text-center">{{$category->name}}</h3>
@@ -79,7 +79,7 @@
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
-                                <h3 class="text-center">Napoje</h3>
+                                <h3 class="text-center">{{$orderId}}</h3>
                             </div>
                         </div>
                     </div>

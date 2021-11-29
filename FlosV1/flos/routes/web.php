@@ -57,6 +57,11 @@ Route::post('/user/{id}', [OrderController::class, 'store']);
 
 Route::get('/user/{id}/{orderId}', [OrderController::class, 'index'])->name('order');
 
+Route::get('/user/{id}/{orderId}/{category}', [OrderController::class, 'categoryIndex'])->name('orderCategory');
+
+
+
+
 Route::get('/user/order/id', function() {
     return view('order');
 });
