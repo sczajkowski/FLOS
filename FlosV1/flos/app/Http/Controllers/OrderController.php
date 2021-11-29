@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Order;
+use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -37,11 +38,15 @@ class OrderController extends Controller
     function index($id, $orderId){
         $user = User::where('id','=',$id)->first();
         $categories = Category::all();
+
         return view('order', compact('user', 'categories', 'orderId'));
     }
 
     function categoryIndex($id, $orderId, $category){
-        return $category;
+        $user = User::where('id','=',$id)->first();
+        $products = Product::where('category', '=' , $category)->get();
+
+        return view('orderCategory', compact('user', 'products'));
     }
 
 

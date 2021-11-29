@@ -60,8 +60,6 @@ Route::get('/user/{id}/{orderId}', [OrderController::class, 'index'])->name('ord
 Route::get('/user/{id}/{orderId}/{category}', [OrderController::class, 'categoryIndex'])->name('orderCategory');
 
 
-
-
 Route::get('/user/order/id', function() {
     return view('order');
 });
