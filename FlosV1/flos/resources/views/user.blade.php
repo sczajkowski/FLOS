@@ -69,17 +69,13 @@
                     </div>
                     @foreach($orders as $order)
                         <div class="col-lg-4">
-                            <a class="card bg-primary btn" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
+                            <a class="card bg-primary btn" type="button" href="{{route('order',[$user, $order->orderId])}}">
                                 <div class="card-header border-0">
                                     <h3 class="card-title">{{$order->table}}</h3>
                                 </div>
                             </a>
                         </div>
                     @endforeach
-
-
-
-
                     <!-- /.col-md-6 -->
                     <!-- /.col-md-6 -->
                 </div>
