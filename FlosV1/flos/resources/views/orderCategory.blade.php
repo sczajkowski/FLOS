@@ -35,7 +35,37 @@
     </div>
 
     <!-- Main Sidebar Container -->
-@include('layouts.orderAside')
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="index3.html" class="brand-link">
+            <img src="/dist/img/flosLogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Flos POS system</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Sidebar user panel (optional) -->
+            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="info">
+                    <div style="color: #83a598" class="d-block">{{$user->name}} {{$user->surname}}</div>
+                </div>
+            </div>
+
+            <!-- SidebarSearch Form -->
+
+
+            <!-- Sidebar Menu -->
+            <nav class="mt-2">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                    <!-- Add icons to the links using the .nav-icon class
+                         with font-awesome or any other icon font library -->
+
+                </ul>
+            </nav>
+            <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+    </aside>
 
 <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -64,15 +94,67 @@
                     @foreach($products as $product)
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
-                            <a href="">
-                                <div class="small-box bg-info">
+                            <a>
+                                <div class="small-box bg-info btn" data-toggle="modal" data-target="#Modal{{$product->id}}">
                                     <div class="inner">
-                                        <h3 class="text-center">{{$product->productName}}</h3>
+                                        <h3 class="text-center"> {{$product->productName}}</h3>
                                     </div>
                                 </div>
                             </a>
                         </div>
+                        <div class="modal fade" id="Modal{{$product->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <form method="post">
+                                        @csrf
+                                        <div class="modal-body">
+                                            {{$product->price}}
+                                        </div>
+
+                                        <div class="input-group mb-3">
+                                            <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                                            <select class="form-select" id="inputGroupSelect01">
+                                                <option selected>Sos do Pizzy</option>
+                                                <option value="1">One</option>
+                                                <option value="2">Two</option>
+                                                <option value="3">Three</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Foreach Extras  and also id and fors must be foreached-->
+
+                                        <input type="checkbox" class="btn-check" id="btn-check-1-outlined" checked autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="btn-check-1-outlined">Dodatek 1</label><br>
+
+                                        <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Dodatek 2</label><br>
+
+                                        <input type="checkbox" class="btn-check" id="btn-check-3-outlined" checked autocomplete="off">
+                                        <label class="btn btn-outline-secondary" for="btn-check-3-outlined">Dodatek 3</label><br>
+
+                                        <div class="input-group">
+                                            <span class="input-group-text">Uwagi</span>
+                                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                                        </div>
+
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
+                                            <button type="button" class="btn btn-primary">Dodaj do zamówienia</button>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
+                        </div>
                     @endforeach
+
                 <!-- ./col -->
                 </div>
             </div><!-- /.container-fluid -->
