@@ -47,7 +47,7 @@ class OrderController extends Controller
         $products = Product::where('category', '=' , $category)->get();
         $order = Order::where('orderId','=', $orderId)->first();
 
-        return view('orderCategory', compact('user', 'products'));
+        return view('orderCategory', compact('user', 'products', 'order'));
     }
 
     function addProductsToOrder($id, $orderId, $category, Request $request){

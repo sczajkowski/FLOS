@@ -53,7 +53,9 @@
 
             <!-- SidebarSearch Form -->
             <div class="bg-white">
-                Dane zamówienia:
+                ID zamówienia: {{$order->orderId}}
+                <br>
+                Dane zamówienia: {{$order->products}}
                 <br>
                 <br>
                 <br>
