@@ -118,12 +118,12 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-                                    <form method="post">
+                                    <form method="POST">
                                         @csrf
                                         <div class="modal-body">
-                                            {{$product->price}}
+                                            cena: {{$product->price}}
                                         </div>
-
+                                        <input name="productId" value="{{$product->id}}" type="hidden">
                                         <div class="input-group mb-3">
                                             <label class="input-group-text" for="inputGroupSelect01">Options</label>
                                             <select class="form-select" id="inputGroupSelect01">
@@ -152,7 +152,7 @@
 
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
-                                            <button type="button" class="btn btn-primary">Dodaj do zamówienia</button>
+                                            <button type="submit" class="btn btn-primary">Dodaj do zamówienia</button>
                                         </div>
                                     </form>
 

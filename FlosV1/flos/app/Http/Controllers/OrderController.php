@@ -45,8 +45,36 @@ class OrderController extends Controller
     function categoryIndex($id, $orderId, $category){
         $user = User::where('id','=',$id)->first();
         $products = Product::where('category', '=' , $category)->get();
+        $order = Order::where('orderId','=', $orderId)->first();
 
         return view('orderCategory', compact('user', 'products'));
+    }
+
+    function addProductsToOrder($id, $orderId, $category, Request $request){
+
+        $order = Order::where('orderId','=',$orderId)->first();
+        $orderCategory = Category::where('name','=',$category)->first();
+
+        $addedProducts = strval($request->productId);
+        if($order->products==null)
+        {
+            $order->products = 'C'.$orderCategory->id.'['.$addedProducts.']';
+            $order->save();
+            return back();
+        }
+        elseif ($order->products!=null)
+        {
+            $existingProducts = $order->products;
+            $order->products = $existingProducts .';'. 'C'.$orderCategory->id.'['.$addedProducts.']';
+            $order->save();
+            return back();
+        }
+        else{
+            return error_log('Error');
+        }
+
+
+
     }
 
 
