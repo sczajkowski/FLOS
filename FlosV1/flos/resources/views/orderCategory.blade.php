@@ -52,7 +52,14 @@
             </div>
 
             <!-- SidebarSearch Form -->
-
+            <div class="bg-white">
+                Dane zamówienia:
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            </div>
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
@@ -106,7 +113,7 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <h5 class="modal-title" id="exampleModalLabel">{{$product->productName}}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
@@ -129,13 +136,13 @@
 
                                         <!-- Foreach Extras  and also id and fors must be foreached-->
 
-                                        <input type="checkbox" class="btn-check" id="btn-check-1-outlined" checked autocomplete="off">
+                                        <input type="checkbox" class="btn-check" id="btn-check-1-outlined"  autocomplete="off">
                                         <label class="btn btn-outline-secondary" for="btn-check-1-outlined">Dodatek 1</label><br>
 
-                                        <input type="checkbox" class="btn-check" id="btn-check-2-outlined" checked autocomplete="off">
+                                        <input type="checkbox" class="btn-check" id="btn-check-2-outlined"  autocomplete="off">
                                         <label class="btn btn-outline-secondary" for="btn-check-2-outlined">Dodatek 2</label><br>
 
-                                        <input type="checkbox" class="btn-check" id="btn-check-3-outlined" checked autocomplete="off">
+                                        <input type="checkbox" class="btn-check" id="btn-check-3-outlined"  autocomplete="off">
                                         <label class="btn btn-outline-secondary" for="btn-check-3-outlined">Dodatek 3</label><br>
 
                                         <div class="input-group">
