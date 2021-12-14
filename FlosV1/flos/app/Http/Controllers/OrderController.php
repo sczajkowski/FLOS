@@ -54,11 +54,12 @@ class OrderController extends Controller
 
         $order = Order::where('orderId','=',$orderId)->first();
         $orderCategory = Category::where('name','=',$category)->first();
-
+        $product = Product::where('id','=',$request->productId)->first();
         $addedProducts = strval($request->productId);
+
         if($order->products==null)
         {
-            $order->products = 'C'.$orderCategory->id.'['.$addedProducts.']';
+            $order->products = '{'.'"categoryId": "'.$orderCategory->id.'","category": "'.$orderCategory->name.'","productId": "'.$addedProducts.'","productName": "'.$product->productName.'","productPrice": "'.$product->price.'"}';
             $order->save();
             return back();
         }

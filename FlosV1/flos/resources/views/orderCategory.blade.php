@@ -55,7 +55,8 @@
             <div class="bg-white">
                 ID zamówienia: {{$order->orderId}}
                 <br>
-                Dane zamówienia: {{$order->products}}
+                {{dd($order->products)}}
+                Dane zamówienia:
                 <br>
                 <br>
                 <br>
