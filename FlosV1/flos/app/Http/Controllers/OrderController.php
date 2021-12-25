@@ -29,7 +29,7 @@ class OrderController extends Controller
         $order->orderId = $orderId;
         $order->user_id = $user_id;
         $order->table = $request->table;
-        $order->products= '{}';
+        $order->products= '[]';
         $order->orderStatus = 'open';
         $order->save();
 
@@ -50,7 +50,8 @@ class OrderController extends Controller
         $products = Product::where('category', '=' , $category)->get();
         $order = Order::where('orderId','=', $orderId)->first();
         $var = json_decode($order->products);
-        return view('orderCategory', compact('user', 'products', 'order','var'));
+        $round = 0;
+        return view('orderCategory', compact('user', 'products', 'order','var', 'round', 'orderId'));
     }
 
     function addProductsToOrder($id, $orderId, $category, Request $request){
@@ -60,11 +61,12 @@ class OrderController extends Controller
         $product = Product::where('id','=',$request->productId)->first();
         $addedProducts = strval($request->productId);
         $orderCategoryString = strval($orderCategory->id);
-        if($order->products=='{}')
+        if($order->products=='[]')
         {
             $arrProducts = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
             $productsJson =  json_encode($arrProducts);
-            $order->products = '['.$productsJson.']';
+            $some = substr($productsJson, 0, -1);
+            $order->products = '['.$some.']';
             $order->save();
             return back();
         }
