@@ -57,6 +57,8 @@ Route::post('/user/{id}', [OrderController::class, 'store']);
 
 Route::get('/user/{id}/{orderId}', [OrderController::class, 'index'])->name('order');
 
+Route::delete('user/{id}/{orderId}/{round}', [OrderController::class, 'destroyProduct'])->name('order.product.delete');
+
 Route::get('/user/{id}/{orderId}/{category}', [OrderController::class, 'categoryIndex'])->name('orderCategory');
 
 Route::post('/user/{id}/{orderId}/{category}', [OrderController::class, 'addProductsToOrder']);

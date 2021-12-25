@@ -41,7 +41,8 @@ class OrderController extends Controller
         $categories = Category::all();
         $order = Order::where('orderId','=', $orderId)->first();
         $var = json_decode($order->products);
-        return view('order', compact('user', 'categories', 'order', 'var', 'orderId'));
+        $round = 0;
+        return view('order', compact('user', 'categories', 'order', 'var', 'orderId', 'round'));
     }
 
     function categoryIndex($id, $orderId, $category){
@@ -88,6 +89,25 @@ class OrderController extends Controller
 
 
 
+    }
+
+    function destroyProduct($id, $orderId, $round, Request $request){
+        //Usunięcie produktu z JSONA ($order->products)
+
+        //$product = $request->deletedProductName;
+        $order = Order::where('orderId','=',$orderId)->first();
+        $var = json_decode($order->products);
+        //find object selected to delete
+
+        unset($var[$round-1]); //deleting object from array
+        $arr2 = array_values($var);
+        $json = json_encode($arr2);
+
+        $order->products = $json;
+        $order->save();
+        //$order = Order::findOrFail($orderId);
+        //dd($order);
+        return back();
     }
 
 
