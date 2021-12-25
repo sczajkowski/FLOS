@@ -63,7 +63,7 @@ class OrderController extends Controller
             $productsJson =  json_encode($arrProducts);
             $order->products = '['.$productsJson.']';
             $order->save();
-            return redirect();
+            return back();
         }
         elseif ($order->products!=null)
         {
@@ -77,7 +77,7 @@ class OrderController extends Controller
 
             $order->products = $var;
             $order->save();
-            return redirect();
+            return back();
 
         }
         else{
