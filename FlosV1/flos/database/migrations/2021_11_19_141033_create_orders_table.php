@@ -18,7 +18,7 @@ class CreateOrdersTable extends Migration
             $table->integer('user_id');
             $table->string('orderId');
             $table->string('table');
-            $table->string('products')->nullable();
+            $table->longText('products')->nullable();
             $table->string('orderStatus')->nullable();
             $table->string('amount')->nullable();
             $table->date('createdAt')->nullable();
