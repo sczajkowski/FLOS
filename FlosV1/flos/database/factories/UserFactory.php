@@ -22,12 +22,14 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        return [
-                'pin' => '654321',
-                'accountType' => 'user',
-                'name' => $this->faker->name(),
-                'surname' => 'Kelnerowski'
+        $admin = [
+            'pin' => '123456',
+            'accountType' => 'admin',
+            'name' => $this->faker->name(),
+            'surname' => 'Adminowski'
         ];
+
+        return [$admin];
     }
 
     /**

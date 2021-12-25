@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     //Dodawanie Produktu lub Kategorii do Bazy
 
-    function store(Request $request){
+    function store(Request $request, $id){
 
         if (isset($_POST['productName'])){
             $data = $request->all();
@@ -26,7 +26,7 @@ class ProductController extends Controller
             return "Error 500 Abort";
         }
 
-        return redirect('admin/products');
+        return redirect('/admin/'.$id.'/products');
     }
 
     //Wyświetlanie PRoduct View wraz ze zmiennymi
@@ -43,6 +43,6 @@ class ProductController extends Controller
     public function destroy($id){
         $product = Product::findOrFail($id);
         $product->delete();
-        return redirect('/admin/products');
+        return redirect('/admin/'.$id.'/products');
     }
 }

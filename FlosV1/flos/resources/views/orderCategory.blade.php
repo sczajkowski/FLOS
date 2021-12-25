@@ -54,14 +54,16 @@
             <!-- SidebarSearch Form -->
             <div class="bg-white">
                 ID zamówienia: {{$order->orderId}}
-                <br>
-                {{dd($order->products)}}
-                Dane zamówienia:
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
+                @foreach($var as $product)
+                <div name="product" style="border-bottom: #0a0e14; border-style: dotted">
+                    <br>
+                    <h2>{{$product->productName}}</h2>
+                    <h4>{{$product->category}}</h4>
+                    <h5>{{$product->productPrice}}</h5>
+                    Quantity:
+                    <br>
+                </div>
+                @endforeach
             </div>
 
             <!-- Sidebar Menu -->

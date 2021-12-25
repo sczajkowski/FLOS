@@ -29,6 +29,7 @@ class OrderController extends Controller
         $order->orderId = $orderId;
         $order->user_id = $user_id;
         $order->table = $request->table;
+        $order->products= '{}';
         $order->orderStatus = 'open';
         $order->save();
 
@@ -38,7 +39,6 @@ class OrderController extends Controller
     function index($id, $orderId){
         $user = User::where('id','=',$id)->first();
         $categories = Category::all();
-
         return view('order', compact('user', 'categories', 'orderId'));
     }
 
@@ -46,8 +46,8 @@ class OrderController extends Controller
         $user = User::where('id','=',$id)->first();
         $products = Product::where('category', '=' , $category)->get();
         $order = Order::where('orderId','=', $orderId)->first();
-
-        return view('orderCategory', compact('user', 'products', 'order'));
+        $var = json_decode($order->products);
+        return view('orderCategory', compact('user', 'products', 'order','var'));
     }
 
     function addProductsToOrder($id, $orderId, $category, Request $request){
@@ -56,19 +56,29 @@ class OrderController extends Controller
         $orderCategory = Category::where('name','=',$category)->first();
         $product = Product::where('id','=',$request->productId)->first();
         $addedProducts = strval($request->productId);
-
-        if($order->products==null)
+        $orderCategoryString = strval($orderCategory->id);
+        if($order->products=='{}')
         {
-            $order->products = '{'.'"categoryId": "'.$orderCategory->id.'","category": "'.$orderCategory->name.'","productId": "'.$addedProducts.'","productName": "'.$product->productName.'","productPrice": "'.$product->price.'"}';
+            $arrProducts = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
+            $productsJson =  json_encode($arrProducts);
+            $order->products = '['.$productsJson.']';
             $order->save();
-            return back();
+            return redirect();
         }
         elseif ($order->products!=null)
         {
-            $existingProducts = $order->products;
-            $order->products = $existingProducts .';'. 'C'.$orderCategory->id.'['.$addedProducts.']';
+            $newProduct = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
+            $newProductJson = json_encode($newProduct);
+            $previousProducts = $order->products;
+            //Offsetting the Order->products value (deleting closing square brackets = "]" to add product to array)
+            $rest = substr($previousProducts, 0, -1);
+
+            $var = $rest.','.$newProductJson.']'; //Adding new product to the array of objects
+
+            $order->products = $var;
             $order->save();
-            return back();
+            return redirect();
+
         }
         else{
             return error_log('Error');
