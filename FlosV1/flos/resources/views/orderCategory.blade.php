@@ -43,10 +43,15 @@
         <div class="content-header">
             <div class="container-fluid">
                 <div class="row mb-2">
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
+                        <a href="{{route('order', [$user->id, $orderId])}}">
+                            <button class="btn btn-danger">Cofnij</button>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
                         <h1 class="m-0">Sala</h1>
                     </div><!-- /.col -->
-                    <div class="col-sm-6">
+                    <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-right">
                             <li class="breadcrumb-item active">Flos v1</li>
                         </ol>
