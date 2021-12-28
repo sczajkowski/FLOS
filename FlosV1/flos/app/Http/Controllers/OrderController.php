@@ -29,7 +29,7 @@ class OrderController extends Controller
         $order->orderId = $orderId;
         $order->user_id = $user_id;
         $order->table = $request->table;
-        $order->products= '[]';
+        $order->products= '{}';
         $order->orderStatus = 'open';
         $order->save();
 
@@ -61,12 +61,11 @@ class OrderController extends Controller
         $product = Product::where('id','=',$request->productId)->first();
         $addedProducts = strval($request->productId);
         $orderCategoryString = strval($orderCategory->id);
-        if($order->products=='[]')
+        if($order->products=='{}')
         {
             $arrProducts = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
             $productsJson =  json_encode($arrProducts);
-            $some = substr($productsJson, 0, -1);
-            $order->products = '['.$some.']';
+            $order->products = '['.$productsJson.']';
             $order->save();
             return back();
         }
@@ -95,21 +94,36 @@ class OrderController extends Controller
 
     function destroyProduct($id, $orderId, $round, Request $request){
         //Usunięcie produktu z JSONA ($order->products)
-
         //$product = $request->deletedProductName;
         $order = Order::where('orderId','=',$orderId)->first();
-        $var = json_decode($order->products);
+        $arrayOfProducts = json_decode($order->products);
         //find object selected to delete
+        unset($arrayOfProducts[$round-1]); //deleting object from array
 
-        unset($var[$round-1]); //deleting object from array
-        $arr2 = array_values($var);
-        $json = json_encode($arr2);
+        if($arrayOfProducts=='[]'){
+        $arrayOfProducts[$round]='{}';
+        }
 
-        $order->products = $json;
-        $order->save();
-        //$order = Order::findOrFail($orderId);
-        //dd($order);
-        return back();
+        $arr2 = array_values($arrayOfProducts); //creating new table with corectly sorted id's
+
+        if(count($arr2)==0){        //If the table is empty products column need to have '{}' value to get an empty object
+            $empty = '{}';
+            $order->products = $empty;
+            $order->save();
+            return back();
+        }
+        else{   //If the table isnt empty it just delete foreached product and create new table with new iteration and save changes it to database
+            $json = json_encode($arr2);
+
+            $order->products = $json;
+            $order->save();
+
+            //$order = Order::findOrFail($orderId);
+            //dd($order);
+            return back();
+        }
+
+
     }
 
 

@@ -31,9 +31,10 @@
                     {{$user->id}}
                     {{$orderId}}
                     <form action="{{ url('/user', [$user->id, $orderId, $round]) }}" method="post">
-                        <input class="btn btn-danger" type="submit" name="deletedProductName" value="Delete" />
-                        @method('delete')
                         @csrf
+                        <input class="input invisible" type="text" name="deletedProductName" value="{{$product->productName}}"/>
+                        <button class="btn btn-danger" type="submit">Delete</button>
+                        @method('delete')
                     </form>
                 </div>
             @endforeach
