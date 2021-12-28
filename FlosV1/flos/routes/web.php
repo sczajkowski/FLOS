@@ -23,7 +23,7 @@ use App\Http\Controllers\OrderController;
 
 //Login View
 
-Route::get('/',[LoginController::class, 'index']);
+Route::get('/',[LoginController::class, 'index'])->name('home');
 
 Route::post('/', [LoginController::class, 'check'])->name('auth.check');
 

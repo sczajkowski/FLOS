@@ -12,6 +12,9 @@
             <div class="info">
                 <div style="color: #83a598" class="d-block">{{$user->name}} {{$user->surname}}</div>
             </div>
+            <div class="info">
+                <a class="btn btn-warning btn-sm" style="color: #0a0e14" href="{{route('home')}}">Logout</a>
+            </div>
         </div>
 
         <!-- SidebarSearch Form -->
