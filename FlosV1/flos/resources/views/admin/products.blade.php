@@ -282,7 +282,7 @@
                                             </td>
                                             <td>
                                                 <!-- Deleting Product -->
-                                                <form action="{{ url('/admin/products', ['id' => $product->id]) }}" method="post">
+                                                <form action="{{ url("/admin/{$product->id}/products")}}" method="post">
                                                     <input class="btn btn-default" type="submit" value="Delete" />
                                                     @method('delete')
                                                     @csrf
