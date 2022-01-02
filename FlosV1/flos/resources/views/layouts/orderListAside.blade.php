@@ -21,6 +21,7 @@
         <!-- SidebarSearch Form -->
         <div class="bg-white">
             ID zamówienia: {{$order->orderId}}
+            <h2>Summary: {{$order->amount}}</h2>
             @foreach($var as $product)
                 <div name="product" style="border-bottom: #0a0e14; border-style: dotted">
                     <br>

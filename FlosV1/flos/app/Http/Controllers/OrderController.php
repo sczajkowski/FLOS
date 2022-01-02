@@ -64,29 +64,36 @@ class OrderController extends Controller
         if($order->products=='{}')
         {
             $arrProducts = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
+
+            $jsonProducts  = json_encode($arrProducts);   // Its necessary to convert array of values to object using json encode and decode
+            $objectProducts = json_decode($jsonProducts);
+            $arr = array('0' => $objectProducts);   //Here we need to define array of objects that will be foreached to get correct amount of order
+
+            $order->amount = $this->priceUpdate($arr);
             $productsJson =  json_encode($arrProducts);
             $order->products = '['.$productsJson.']';
-            $order->save();
-            return back();
         }
         elseif ($order->products!=null)
         {
             $newProduct = array('categoryId' => $orderCategoryString, 'category' => $orderCategory->name, 'productId' => $addedProducts, 'productName' => $product->productName, 'productPrice' => $product->price);
             $newProductJson = json_encode($newProduct);
             $previousProducts = $order->products;
-            //Offsetting the Order->products value (deleting closing square brackets = "]" to add product to array)
+
+            //Offsetting the Order->products value (deleting closing square brackets = "]" to add product to Array of products)
             $rest = substr($previousProducts, 0, -1);
 
             $var = $rest.','.$newProductJson.']'; //Adding new product to the array of objects
-
+            $order->amount = $this->priceUpdate(json_decode($var));
             $order->products = $var;
-            $order->save();
-            return back();
 
         }
         else{
             return error_log('Error');
         }
+        //Here we need to generate price to Price for whole order
+
+        $order->save();
+        return back();
 
 
 
@@ -105,25 +112,34 @@ class OrderController extends Controller
         }
 
         $arr2 = array_values($arrayOfProducts); //creating new table with corectly sorted id's
+        $order->amount = $this->priceUpdate($arr2);
 
         if(count($arr2)==0){        //If the table is empty products column need to have '{}' value to get an empty object
             $empty = '{}';
             $order->products = $empty;
-            $order->save();
-            return back();
+
         }
-        else{   //If the table isnt empty it just delete foreached product and create new table with new iteration and save changes it to database
+        else{//If the table isn't empty it just delete foreached product and create new table with new iteration and save changes it to database
+
             $json = json_encode($arr2);
-
             $order->products = $json;
-            $order->save();
 
-            //$order = Order::findOrFail($orderId);
-            //dd($order);
-            return back();
         }
 
+        $order->save();
+        return back();
 
+    }
+
+    function priceUpdate($table){
+        $summary = 0;   //Reset Value of summary
+        foreach ($table as $thisRecord){
+            $priceString = $thisRecord->productPrice;
+            $priceFloat = (float)$priceString;
+            $summary += $priceFloat;
+        }
+        $summaryString = (string)$summary;
+        return $summaryString;
     }
 
 
