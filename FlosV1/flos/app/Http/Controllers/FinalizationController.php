@@ -8,11 +8,14 @@ use App\Models\Order;
 
 class FinalizationController extends Controller
 {
-    function finalization($id, $orderId){
+    function finalization($id, $orderId,Request $request){
         $user = User::where('id','=',$id)->first();
         $order = Order::where('orderId','=', $orderId)->first();
+        $orders = Order::where([['user_id','=',$id],['orderStatus', '=', 'open']])
+            ->get();
+        $order->paymentMethod = $request->paymentMethod;
         $order->orderStatus = "closed";
         $order->save();
-        return view('user', compact('user', 'orderId'));
+        return view('user', compact('user', 'orders'));
     }
 }

@@ -27,7 +27,7 @@
                      with font-awesome or any other icon font library -->
                 <li class="nav-header">ZAKŁADKI</li>
                 <li class="nav-item">
-                    <a href="pages/calendar.html" class="nav-link">
+                    <a href="/admin/{{$user->id}}/orders" class="nav-link">
                         <i class="nav-icon fas fa-calendar-alt"></i>
                         <p>
                             Zamówienia

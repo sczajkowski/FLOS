@@ -21,6 +21,7 @@ class CreateOrdersTable extends Migration
             $table->longText('products')->nullable();
             $table->string('orderStatus')->nullable();
             $table->string('amount')->nullable();
+            $table->string('paymentMethod')->nullable();
             $table->date('createdAt')->nullable();
             $table->date('closedAt')->nullable();
             $table->timestamps();

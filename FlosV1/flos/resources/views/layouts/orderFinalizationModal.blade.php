@@ -21,13 +21,13 @@
                         <!-- Row -->
                         <div class="form-check col-12" >
                             <div class="col-6">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                <input class="form-check-input" type="radio" name="paymentMethod" value="cash" id="flexRadioDefault1">
                                 <label class="form-check-label" for="flexRadioDefault1">
                                     Cash
                                 </label>
                             </div>
                             <div class="col-6">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                <input class="form-check-input" type="radio" name="paymentMethod" value="card" id="flexRadioDefault2" checked>
                                 <label class="form-check-label" for="flexRadioDefault2">
                                     Card
                                 </label>

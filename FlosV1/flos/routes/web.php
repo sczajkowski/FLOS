@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\FinalizationController;
+use App\Http\Controllers\Admin\AdminOrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,9 @@ Route::post('/', [LoginController::class, 'check'])->name('auth.check');
 
 //Main
 Route::get('/admin/{id}',[AdminLoginController::class, 'index'])->name('admin');
+
+//Orders
+Route::get('/admin/{id}/orders',[AdminOrderController::class, 'index'])->name('admin.orders');
 
 //Products
 Route::get('/admin/{id}/products', [ProductController::class, 'index'])->name('admin.products');
