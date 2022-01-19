@@ -7,7 +7,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form method="POST" action="/">
+            <form method="POST" action="/{{$user->accountType}}/{{$user->id}}/{{$orderId}}">
+                @csrf
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12">
