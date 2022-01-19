@@ -13,7 +13,8 @@ class UserController extends Controller
 
         public function index($id){
             $user = User::where('id','=',$id)->first();
-            $orders = Order::where('user_id','=',$id)->get();
+            $orders = Order::where([['user_id','=',$id],['orderStatus', '=', 'open']])
+                        ->get();
 
             return view('user', compact('user', 'orders'));
         }

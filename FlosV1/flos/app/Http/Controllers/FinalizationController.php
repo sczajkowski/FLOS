@@ -9,6 +9,10 @@ use App\Models\Order;
 class FinalizationController extends Controller
 {
     function finalization($id, $orderId){
-        dd("no 401");
+        $user = User::where('id','=',$id)->first();
+        $order = Order::where('orderId','=', $orderId)->first();
+        $order->orderStatus = "closed";
+        $order->save();
+        return view('user', compact('user', 'orderId'));
     }
 }
