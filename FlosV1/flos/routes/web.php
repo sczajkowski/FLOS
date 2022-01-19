@@ -8,6 +8,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\TableController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\FinalizationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,9 @@ Route::get('/user/{id}', [UserController::class,'index'])->name('user');
 Route::post('/user/{id}', [OrderController::class, 'store']);
 
 Route::get('/user/{id}/{orderId}', [OrderController::class, 'index'])->name('order');
+
+Route::post('/user/{id}/{orderId}', [FinalizationController::class, 'finalization']);
+
 
 Route::delete('user/{id}/{orderId}/{round}', [OrderController::class, 'destroyProduct'])->name('order.product.delete');
 

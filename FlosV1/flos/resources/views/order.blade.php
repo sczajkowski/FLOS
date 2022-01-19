@@ -50,7 +50,7 @@
                         </a>
                     </div><!-- /.col -->
                     <div class="col-sm-4">
-                        <h1 class="m-0">Sala</h1>
+                        <h1 class="m-0">Table: {{$order->table}}</h1>
                     </div><!-- /.col -->
                     <div class="col-sm-4">
                         <ol class="breadcrumb float-sm-right">
@@ -91,6 +91,7 @@
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
+            @include('layouts.orderFinalizationModal') <!-- Finalization Modal -->
         </section>
         <!-- /.content -->
     </div>

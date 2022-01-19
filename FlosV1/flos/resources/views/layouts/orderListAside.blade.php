@@ -1,4 +1,3 @@
-
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -21,7 +20,18 @@
         <!-- SidebarSearch Form -->
         <div class="bg-white">
             ID zamówienia: {{$order->orderId}}
-            <h2>Summary: {{$order->amount}}</h2>
+            <div class="row">
+                <div class="col-8"><h2>Summary: {{$order->amount}}</h2></div>
+                <div class="col-4">
+                    <!-- Button trigger modal -->
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        Finalize Order
+                    </button>
+                </div>
+            </div>
+
+
             @foreach($var as $product)
                 <div name="product" style="border-bottom: #0a0e14; border-style: dotted">
                     <br>

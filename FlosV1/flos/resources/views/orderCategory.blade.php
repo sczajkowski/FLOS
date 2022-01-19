@@ -133,6 +133,7 @@
                 <!-- ./col -->
                 </div>
             </div><!-- /.container-fluid -->
+            @include('layouts.orderFinalizationModal')
         </section>
         <!-- /.content -->
     </div>
