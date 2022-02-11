@@ -16,6 +16,6 @@ class FinalizationController extends Controller
         $order->paymentMethod = $request->paymentMethod;
         $order->orderStatus = "closed";
         $order->save();
-        return view('user', compact('user', 'orders'));
+        return route('user', $id ,compact('user', 'orders'));
     }
 }

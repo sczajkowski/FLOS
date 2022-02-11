@@ -46,7 +46,7 @@
                 <div class="row mb-2">
                     <div class="col-sm-4">
                         <a href="{{route('user', [$user->id])}}">
-                            <button class="btn btn-danger">Cofnij</button>
+                            <button class="btn btn-danger">Back</button>
                         </a>
                     </div><!-- /.col -->
                     <div class="col-sm-4">

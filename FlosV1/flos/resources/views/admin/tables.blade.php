@@ -231,7 +231,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header border-0">
-                                <h3 class="card-title">`cos tan`</h3>
+                                <h3 class="card-title">Tables</h3>
                                 <div class="card-tools">
                                     <a href="#" class="btn btn-tool btn-sm">
                                         <i class="fas fa-download"></i>
@@ -245,10 +245,10 @@
                                 <table class="table table-striped table-valign-middle">
                                     <thead>
                                     <tr>
-                                        <th>Nazwa</th>
-                                        <th>ilość Klientów</th>
+                                        <th>Name</th>
+                                        <th>Amount of Customers</th>
                                         <th>Status</th>
-                                        <th>Usuń</th>
+                                        <th>Edit</th>
                                     </tr>
                                     </thead>
                                     <tbody>

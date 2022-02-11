@@ -233,7 +233,56 @@
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
+                    <div class="col-lg-4">
+                        <!--Display All Categories using ForEach-->
+                        @foreach($categories as $category)
+                            <div class="card">
+                                <div class="card-header border-0">
+                                    <h3 class="card-title">{{$category->name}}</h3>
+                                    <div class="card-tools">
+                                        <a href="#" class="btn btn-tool btn-sm">
+                                            <i class="fas fa-download"></i>
+                                        </a>
+                                        <a href="#" class="btn btn-tool btn-sm">
+                                            <i class="fas fa-bars"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                        <a class="card bg-success btn" type="button" data-bs-toggle="modal" data-bs-target="#categoryModal">
+                            <div class="card-header border-0">
+                                <h3 class="card-title">Dodaj Nową Kategorie</h3>
+                            </div>
+                        </a>
+                        <div class="modal fade" id="categoryModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Formularz dodania kategorii</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form method="POST">
+                                            @csrf
+                                            <div class="input-group input-group-sm mb-3">
+                                                <span class="input-group-text" id="inputGroup-sizing-sm">Kategoria</span>
+                                                <input type="text" name="name" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                                                <button type="button" class="btn btn-success">Tick</button>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                                                <button type="submit" class="btn btn-primary">Dodaj Kategorie</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /.card -->
+                    </div>
+                    <div class="col-lg-8">
                         <!--Display All Categories using ForEach-->
                         @foreach($categories as $category)
                         <div class="card">

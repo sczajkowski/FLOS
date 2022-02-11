@@ -11,7 +11,7 @@ class AdminOrderController extends Controller
 {
     function index($id){
         $user = User::where('id','=',$id)->first();
-        $orders = Order::all();
+        $orders = Order::all()->sortDesc();
         return view('admin.orders', compact('user','orders'));
     }
 }
